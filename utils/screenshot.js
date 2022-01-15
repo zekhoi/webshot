@@ -15,7 +15,7 @@ export const getScreenshot = async (url) => {
   try {
     browser = await getBrowserInstance();
     let page = await browser.newPage();
-    await page.goto(url, { waitUntil: "networkidle0" });
+    await page.goto(url, { waitUntil: "load" });
     const screenshot = await page.screenshot({
       type: "png",
     });
